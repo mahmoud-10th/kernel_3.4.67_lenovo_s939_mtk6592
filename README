@@ -2,10 +2,15 @@
 (http://4pda.ru/forum/index.php?showuser=2630366)
 из испорченого кода отданого Lenovo 
 =========================================================
-export CROSS_COMPILE=/полный_путь_до_тулчейна/bin/префикс (вместо префикса, например, ставишь arm-cortex_a7-linux-gnueabihf- , но это зависит от тулчейна, у меня Linaro 4.9 для ARM Cortex A7)
+export CROSS_COMPILE=/path_of_toolchain/bin 
+
+(вместо префикса, например, ставишь arm-cortex_a7-linux-gnueabihf- , но это зависит от тулчейна, у меня Linaro 4.9 для ARM Cortex A7)
 Сборка делается в 1 команду
-./mk -o=TARGET_BUILD_VARIANT=user stellap n k
-Готовый zImage забираешь в папке out/target/product/stellap/obj/KERNEL_OBJ/arch/arm/boot
+
+./mk -o=TARGET_BUILD_VARIANT=user phaeton n k
+
+
+zImage path out/target/product/phaeton/obj/KERNEL_OBJ/arch/arm/boot
 =========================================================
 На собранном ядре наблюдаются перезагрузки
 At the core of the assembled observed reboot
